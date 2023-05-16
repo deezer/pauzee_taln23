@@ -3,7 +3,7 @@
 In this repository, we present Pauzee, a silent pause prediction system.
 The goal of this project is to predict when it sounds better for a reader to take breaks
 in speech while reading a text.
-
+ 
 The code contained in this github directory is associated with the work described in the paper 
 "_Pauzee : Prédiction des pauses dans la lecture d’un texte_" accepted at TALN 2023.
 

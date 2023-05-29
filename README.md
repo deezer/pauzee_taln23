@@ -86,7 +86,7 @@ a train, a test and a dev (which will be used for learning and prediction).
 In order to make this system works, you will have to use a trained model to predict breaks.
 
 The **model** used is automatically downloaded when you build the container .
-You can also find it ([here (model_pauzee.tar.gz)](https://github.com/deezer/pauzee_taln23/releases/download/v1.0.0/model_pauzee.tar.gz)) 
+You can also find it [here (model_pauzee.tar.gz)](https://github.com/deezer/pauzee_taln23/releases/download/v1.0.0/model_pauzee.tar.gz) 
 or re-trained it following the procedure explained below.
 
 Then, you can use this model to **predict break in a text** with this script:

@@ -1,14 +1,13 @@
 # Names of the code directory and the Docker image, change them to match your project
-DOCKER_IMAGE_NAME := breath_prediction
-DOCKER_CONTAINER_NAME := breath_prediction
+DOCKER_IMAGE_NAME := break_prediction
+DOCKER_CONTAINER_NAME := break_prediction
 CODE_DIRECTORY := code
 DATA_DIRECTORY := data
 
 DOCKER_PARAMS=  -it --rm --name=$(DOCKER_CONTAINER_NAME) 
 # Specify GPU device(s) to use. Comment out this line if you don't have GPUs available
-DOCKER_PARAMS+= --gpus '"device=2"' #'"device=0,1"'
+DOCKER_PARAMS+= --gpus '"device=3"' #'"device=0,1"'
 # Run Docker container while mounting the local directory
-#DOCKER_RUN_MOUNT= docker run $(DOCKER_PARAMS) -v $(PWD):/workspace $(DOCKER_IMAGE_NAME)
 DOCKER_RUN_MOUNT= docker run $(DOCKER_PARAMS) -v $(PWD):/workspace/break_detection $(DOCKER_IMAGE_NAME)
 
 

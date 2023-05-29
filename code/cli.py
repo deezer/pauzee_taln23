@@ -78,12 +78,14 @@ def train(config: str, dataset: str) -> None:
               )
 @click.option("--dataset",
               type=click.Path(exists=True),
-              default="break_detection/data/orfeo-synpaflex/",
+              # default="break_detection/data/orfeo-synpaflex/",
+              default="break_detection/data/",
               help="Path to the folder containing the dataset.",
               )
 @click.option("--prediction_dir",
               type=click.Path(exists=True),
-              default="break_detection/results/orfeo-synpaflex_pauzee/",
+              # default="break_detection/results/orfeo-synpaflex_pauzee/",
+              default="break_detection/results/",
               help="Folder used to save predictions.",
               )
 @click.option("--prompt",
@@ -151,7 +153,7 @@ def predict(
                 click.secho(f"writing results here : {output_folder + file}", fg="yellow")
                 output.to_csv(output_folder + file, sep="\t", header=None, index=False)
             else:
-                print(output)
+                print(output.to_string())
 
     if prompt != "":
         os.remove(test_folder + '/pauzee_tmp_sentence2test.csv')

@@ -91,7 +91,7 @@ or re-trained it following the procedure explained below.
 
 Then, you can use this model to **predict break in a text** with this script:
 
-    poetry run python break_detection/code/cli.py test --model models/version_17-02-2023--pauzee/ --test --dataset break_detection/data/oralNarrative_annotated/ --prediction_dir break_detection/results/orfeo-synpaflex_pauzee/
+    poetry run python break_detection/code/cli.py test --model models/version_17-02-2023--pauzee/ --test --dataset break_detection/data/oralNarrative_annotated/ --prediction_dir break_detection/results/orfeo_pauzee/
 
 This script allows to generate breaks in a given dataset.  
 It takes as input several parameters:
@@ -101,7 +101,7 @@ It takes as input several parameters:
 The files in this folder must contain one word per line. 
 It need to be in unbabel format with 3 columns separated with a comma (e.g. "word,0,0"). 
 The first line is ignored.
-* --prediction_dir : the path to the directory in which we want to write the results
+* --prediction_dir : the path to the directory in which we want to write the results (you have to create it with an mkdir before)
 
 The results will be written in this directory given as argument.
 Each output file will be composed of 3 columns. 
@@ -114,7 +114,7 @@ the second one the results of a multiclass classification_.
 
 **If you want to train your own model, you can use this command line :**
 
-    $ poetry run python break_detection/code/cli.py train -f break_detection/code/configs/optuna-large.yaml  --dataset break_detection/data/oralNarrative_annotated/
+    poetry run python break_detection/code/cli.py train -f break_detection/code/configs/optuna-large.yaml  --dataset break_detection/data/oralNarrative_annotated/
 
 For the training of the model, the script 'break_detection/code/cli.py' is used in train mode.
 It needs two arguments:
@@ -129,12 +129,13 @@ If you want to save it outside the docker, just copy it to the _break_detection_
 
 The evaluation is after done with this script :
 
-    `poetry run python break_detection/code/evaluation/evaluation.py --gold_path break_detection/data/oralNarrative_annotated/test/ --predicted_path "break_detection/results/orfeo-synpaflex_pauzee/" --subtask break`
+    `poetry run python break_detection/code/evaluation/evaluation.py --gold_path break_detection/data/oralNarrative_annotated/test/ --predicted_path "break_detection/results/orfeo_pauzee/test" --subtask break`
 
 To work properly, this file must take into account the directory containing the gold file(s), 
 those containing the pauses predicted by pauzee and what we want to evaluate 
-(the pause prediction "break" or the pause length prediction "break_size"). 
-_Be cautious : to reproduce the evaluation done with Unbabel, it is the "punct2break" subtask 
+(the pause prediction "break" or the pause length prediction "break_size").
+
+_It should be noted that the results presented in the paper were calculated using the SynPaFlex AND Oral Narrative Corpus. In addition to reproduce the evaluation done with Unbabel, it is the "punct2break" subtask 
 that must be used to consider the predicted punctuation as a break_.
 
 ## Cite

@@ -142,9 +142,9 @@ def evaluate_subtask(gold_path: str, predicted_path: str, subtask: str) -> None:
     print(eval_result)
 
     # --- get confusion matrix ---
-    labels = ['0', '1', '2', '3'] if subtask == "break_size" else ['0', '1']
-    cm = confusion_matrix(all_gt_labels, all_predicted_labels, labels=labels, normalize='true')
-    display_confusion_matrix(cm, subtask+'tmp.pdf', subtask)
+    # labels = ['0', '1', '2', '3'] if subtask == "break_size" else ['0', '1']
+    # cm = confusion_matrix(all_gt_labels, all_predicted_labels, labels=labels, normalize='true')
+    # display_confusion_matrix(cm, subtask+'tmp.pdf', subtask)
 
 
 if __name__ == "__main__":

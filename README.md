@@ -144,8 +144,8 @@ that must be used to consider the predicted punctuation as a break_.
 @inproceedings{epure2020muzeeglot,
   title={Pauzee: Prédiction des pauses dans la lecture d'un texte},
   author={Baranes, Marion and Hayek, Karl and Hennequin, Romain and Epure, Elena V},
-  booktitle={},
-  pages={},
+  booktitle={Actes de la 30e Conférence sur le Traitement Automatique des Langues Naturelles (TALN)},
+  pages={43--55},
   year={2023},
   organization={ATALA}
 ```

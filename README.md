@@ -141,7 +141,7 @@ that must be used to consider the predicted punctuation as a break_.
 ## Cite
 
 ```
-@inproceedings{epure2020muzeeglot,
+@inproceedings{Baranes2023Pauzee,
   title={Pauzee: Prédiction des pauses dans la lecture d'un texte},
   author={Baranes, Marion and Hayek, Karl and Hennequin, Romain and Epure, Elena V},
   booktitle={Actes de la 30e Conférence sur le Traitement Automatique des Langues Naturelles (TALN)},
